@@ -1,0 +1,59 @@
+; Code Composer Project File, Version 2.0 (do not modify or remove this line)
+
+[Project Settings]
+ProjectDir="C:\CCStudio_v3.3\MyProjects\SPeechCodec\mycreatd\asmbly_opti\G729a_CCS_assmbly\"
+ProjectType=Executable
+CPUFamily=TMS320C64XX
+Tool="Compiler"
+Tool="CustomBuilder"
+Tool="DspBiosBuilder"
+Tool="Linker"
+Config="Debug"
+Config="Release"
+
+[Source Files]
+Source="..\..\..\..\..\C6000\cgtools\lib\rts6400.lib"
+Source="ACELP_CA.C"
+Source="BASIC_OP.C"
+Source="BITS.C"
+Source="COD_LD8A.C"
+Source="CODER.C"
+Source="COR_FUNC.C"
+Source="DE_ACELP.C"
+Source="DEC_GAIN.C"
+Source="DEC_LAG3.C"
+Source="DEC_LD8A.C"
+Source="DECODER.C"
+Source="DSPFUNC.C"
+Source="FILTER.C"
+Source="G729A.asm"
+Source="GAINPRED.C"
+Source="LPC.C"
+Source="LPCFUNC.C"
+Source="LSPDEC.C"
+Source="LSPGETQ.C"
+Source="OPER_32B.C"
+Source="P_PARITY.C"
+Source="PITCH_A.C"
+Source="POST_PRO.C"
+Source="POSTFILT.C"
+Source="PRE_PROC.C"
+Source="PRED_LT3.C"
+Source="QUA_GAIN.C"
+Source="QUA_LSP.C"
+Source="TAB_LD8A.C"
+Source="TAMING.C"
+Source="UTIL.C"
+
+["Compiler" Settings: "Debug"]
+Options=-g -fr"$(Proj_dir)\Debug" -d"_DEBUG" -mv6400
+
+["Compiler" Settings: "Release"]
+Options=-o3 -fr"$(Proj_dir)\Release" -mv6400
+
+["Linker" Settings: "Debug"]
+Options=-c -heap4000 -m".\Debug\G729a_CCS_assmbly.map" -o".\Debug\G729a_CCS_assmbly.out" -stack4000 -w -x
+
+["Linker" Settings: "Release"]
+Options=-c -m".\Release\G729a_CCS_assmbly.map" -o".\Release\G729a_CCS_assmbly.out" -w -x
+
